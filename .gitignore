@@ -1,2 +1,3 @@
 vendors/*
+app/tmp/*
 .phpunit.result.cache

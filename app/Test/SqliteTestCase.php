@@ -12,7 +12,8 @@ abstract class SqliteTestCase extends BaseTestCase
      * @var array
      */
     public $fixtures = [
-        'app.user'
+        'app.user',
+        'app.user_account',
     ];
 
     /** @inheritdoc */
