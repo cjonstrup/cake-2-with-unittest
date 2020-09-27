@@ -1,6 +1,6 @@
 {
-	"name": "cakephp/cakephp",
-	"description": "The CakePHP framework",
+	"name": "cjonstrup/cake-2-with-unittest",
+	"description": "The CakePHP framework with PHPUnitest 9.x",
 	"type": "library",
 	"keywords": ["framework"],
 	"homepage": "https://cakephp.org",
