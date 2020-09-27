@@ -90,7 +90,3 @@ if (!empty($failed)) {
 if (Configure::read('debug') < 1) {
 	throw new NotFoundException(__d('cake_dev', 'Debug setting does not allow access to this URL.'));
 }
-
-require_once CAKE . 'TestSuite' . DS . 'CakeTestSuiteDispatcher.php';
-
-CakeTestSuiteDispatcher::run();

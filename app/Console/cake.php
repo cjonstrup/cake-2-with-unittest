@@ -14,7 +14,6 @@
  * @link          https://cakephp.org CakePHP(tm) Project
  * @package       app.Console
  * @since         CakePHP(tm) v 2.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 if (!defined('DS')) {
@@ -30,9 +29,11 @@ if (function_exists('ini_set')) {
 	$composerInstall = $root . DS . $appDir . DS . 'Vendor' . DS . 'cakephp' . DS . 'cakephp' . DS . 'lib';
 
 	// the following lines differ from its sibling
-	// /lib/Cake/Console/Templates/skel/Console/cake.php
+	// /app/Console/cake.php
 	if (file_exists($composerInstall . DS . $dispatcher)) {
 		$install = $composerInstall;
+	} elseif (!file_exists($install . DS . $dispatcher)) {
+		$install = $root . PATH_SEPARATOR .  DS . 'home' . DS . 'cajo' . DS . 'sites' . DS . 'cake-2-with-unittest' . DS . 'Vendor' . DS . 'cakephp' . DS . 'cakephp' . DS . 'lib';
 	}
 
 	ini_set('include_path', $install . PATH_SEPARATOR . ini_get('include_path'));

@@ -4,22 +4,10 @@
  *
  * Use it to configure core behavior of Cake.
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  * @link          https://cakephp.org CakePHP(tm) Project
  * @package       app.Config
  * @since         CakePHP(tm) v 0.2.9
- * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
-//setLocale(LC_ALL, 'deu');
-//Configure::write('Config.language', 'deu');
 
 /**
  * CakePHP Debug Level:
@@ -71,8 +59,6 @@
  * - `renderer` - string - The class responsible for rendering uncaught exceptions. If you choose a custom class you
  *   should place the file for that class in app/Lib/Error. This class needs to implement a render method.
  * - `log` - boolean - Should Exceptions be logged?
- * - `extraFatalErrorMemory` - integer - Increases memory limit at shutdown so fatal errors are logged. Specify
- *   amount in megabytes or use 0 to disable (default: 4 MB)
  * - `skipLog` - array - list of exceptions to skip for logging. Exceptions that
  *   extend one of the listed exceptions will also be skipped for logging.
  *   Example: `'skipLog' => array('NotFoundException', 'UnauthorizedException')`
@@ -116,16 +102,9 @@
  * for any URL generation inside the application, set the following
  * configuration variable to the http(s) address to your domain. This
  * will override the automatic detection of full base URL and can be
- * useful when generating links from the CLI (e.g. sending emails).
- * If the application runs in a subfolder, you should also set App.base.
+ * useful when generating links from the CLI (e.g. sending emails)
  */
-	//Configure::write('App.fullBaseUrl', 'http://example.com');
-
-/**
- * The base directory the app resides in. Should be used if the
- * application runs in a subfolder and App.fullBaseUrl is set.
- */
-	//Configure::write('App.base', '/my_app');
+	//Configure::write('App.fullBaseUrl', 'https://example.com');
 
 /**
  * Web path to the public images directory under webroot.
@@ -198,7 +177,6 @@
  *
  * - `Session.cookie` - The name of the cookie to use. Defaults to 'CAKEPHP'
  * - `Session.timeout` - The number of minutes you want sessions to live for. This timeout is handled by CakePHP
- * - `Session.useForwardsCompatibleTimeout` - Whether or not to make timeout 3.x compatible.
  * - `Session.cookieTimeout` - The number of minutes you want session cookies to live for.
  * - `Session.checkAgent` - Do you want the user agent to be checked when starting sessions? You might want to set the
  *    value to false, when dealing with older versions of IE, Chrome Frame or certain web-browsing devices and AJAX
@@ -209,8 +187,6 @@
  *    to the ini array.
  * - `Session.autoRegenerate` - Enabling this setting, turns on automatic renewal of sessions, and
  *    sessionids that change frequently. See CakeSession::$requestCountdown.
- * - `Session.cacheLimiter` - Configure the cache control headers used for the session cookie.
- *   See http://php.net/session_cache_limiter for accepted values.
  * - `Session.ini` - An associative array of additional ini values to set.
  *
  * The built in defaults are:
@@ -232,13 +208,11 @@
 
 /**
  * A random string used in security hashing methods.
- */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi');
+ */	Configure::write('Security.salt', 'f13b23975e31db029f4efe7c1cd39ce1c6d85e72');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
- */
-	Configure::write('Security.cipherSeed', '76859309657453542496749683645');
+ */	Configure::write('Security.cipherSeed', '373361323065323466343535303230');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -281,14 +255,6 @@
 	//date_default_timezone_set('UTC');
 
 /**
- * `Config.timezone` is available in which you can set users' timezone string.
- * If a method of CakeTime class is called with $timezone parameter as null and `Config.timezone` is set,
- * then the value of `Config.timezone` will be used. This feature allows you to set users' timezone just
- * once instead of passing it each time in function calls.
- */
-	//Configure::write('Config.timezone', 'Europe/Paris');
-
-/**
  * Cache Engine Configuration
  * Default settings provided below
  *
@@ -305,7 +271,7 @@
  * 		'mask' => 0664, //[optional]
  *	));
  *
- * APC (http://pecl.php.net/package/APC)
+ * APC (https://pecl.php.net/package/APC)
  *
  * 	 Cache::config('default', array(
  *		'engine' => 'Apc', //[required]
@@ -314,7 +280,7 @@
  * 		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
  *	));
  *
- * Xcache (http://xcache.lighttpd.net/)
+ * Xcache (https://xcache.lighttpd.net/)
  *
  * 	 Cache::config('default', array(
  *		'engine' => 'Xcache', //[required]
@@ -325,23 +291,21 @@
  *		'password' => 'password', //plaintext password (xcache.admin.pass)
  *	));
  *
- * Memcached (http://www.danga.com/memcached/)
- *
- * Uses the memcached extension. See http://php.net/memcached
+ * Memcache (http://www.danga.com/memcached/)
  *
  * 	 Cache::config('default', array(
- *		'engine' => 'Memcached', //[required]
+ *		'engine' => 'Memcache', //[required]
  *		'duration' => 3600, //[optional]
  *		'probability' => 100, //[optional]
  * 		'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
  * 		'servers' => array(
  * 			'127.0.0.1:11211' // localhost, default port 11211
  * 		), //[optional]
- * 		'persistent' => 'my_connection', // [optional] The name of the persistent connection.
- * 		'compress' => false, // [optional] compress data in Memcached (slower, but uses less memory)
+ * 		'persistent' => true, // [optional] set this to false for non-persistent connections
+ * 		'compress' => false, // [optional] compress data in Memcache (slower, but uses less memory)
  *	));
  *
- *  Wincache (http://php.net/wincache)
+ *  Wincache (https://secure.php.net/wincache)
  *
  * 	 Cache::config('default', array(
  *		'engine' => 'Wincache', //[required]
@@ -370,7 +334,7 @@ if (Configure::read('debug') > 0) {
 }
 
 // Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
-$prefix = 'myapp_';
+$prefix = '._';
 
 /**
  * Configure the cache used for general framework caching. Path information,

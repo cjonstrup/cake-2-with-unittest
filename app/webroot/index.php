@@ -44,13 +44,6 @@ if (!defined('APP_DIR')) {
 }
 
 /**
- * Config Directory
- */
-if (!defined('CONFIG')) {
-	define('CONFIG', ROOT . DS . APP_DIR . DS . 'Config' . DS);
-}
-
-/**
  * The absolute path to the "cake" directory, WITHOUT a trailing DS.
  *
  * Un-comment this line to specify a fixed path to CakePHP.
@@ -62,9 +55,9 @@ if (!defined('CONFIG')) {
  * Leaving this constant undefined will result in it being defined in Cake/bootstrap.php
  *
  * The following line differs from its sibling
- * /lib/Cake/Console/Templates/skel/webroot/index.php
+ * /app/webroot/index.php
  */
-//define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'lib');
+define('CAKE_CORE_INCLUDE_PATH',  ROOT . DS . APP_DIR . DS . 'Vendor' . DS . 'cakephp' . DS . 'cakephp' . DS . 'lib');
 
 /**
  * This auto-detects CakePHP as a composer installed library.
@@ -89,7 +82,7 @@ if (!defined('WWW_ROOT')) {
 
 // For the built-in server
 if (PHP_SAPI === 'cli-server') {
-	if ($_SERVER['PHP_SELF'] !== '/' . basename(__FILE__) && file_exists(WWW_ROOT . $_SERVER['PHP_SELF'])) {
+	if ($_SERVER['REQUEST_URI'] !== '/' && file_exists(WWW_ROOT . $_SERVER['PHP_SELF'])) {
 		return false;
 	}
 	$_SERVER['PHP_SELF'] = '/' . basename(__FILE__);

@@ -4,18 +4,9 @@
  *
  * Use it to configure database for ACL
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  * @link          https://cakephp.org CakePHP(tm) Project
  * @package       app.Config.Schema
  * @since         CakePHP(tm) v 0.2.9
- * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 /**
@@ -28,7 +19,7 @@ class DbAclSchema extends CakeSchema {
  * Before event.
  *
  * @param array $event The event data.
- * @return bool Success
+ * @return bool success
  */
 	public function before($event = array()) {
 		return true;
@@ -54,11 +45,7 @@ class DbAclSchema extends CakeSchema {
 		'alias' => array('type' => 'string', 'null' => true),
 		'lft' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 10),
 		'rght' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 10),
-		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1),
-			'idx_acos_lft_rght' => array('column' => array('lft', 'rght'), 'unique' => 0),
-			'idx_acos_alias' => array('column' => 'alias', 'unique' => 0)
-		)
+		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
 	);
 
 /**
@@ -72,11 +59,7 @@ class DbAclSchema extends CakeSchema {
 		'alias' => array('type' => 'string', 'null' => true),
 		'lft' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 10),
 		'rght' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 10),
-		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1),
-			'idx_aros_lft_rght' => array('column' => array('lft', 'rght'), 'unique' => 0),
-			'idx_aros_alias' => array('column' => 'alias', 'unique' => 0)
-		)
+		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
 	);
 
 /**
@@ -91,11 +74,7 @@ class DbAclSchema extends CakeSchema {
 		'_read' => array('type' => 'string', 'null' => false, 'default' => '0', 'length' => 2),
 		'_update' => array('type' => 'string', 'null' => false, 'default' => '0', 'length' => 2),
 		'_delete' => array('type' => 'string', 'null' => false, 'default' => '0', 'length' => 2),
-		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1),
-			'ARO_ACO_KEY' => array('column' => array('aro_id', 'aco_id'), 'unique' => 1),
-			'idx_aco_id' => array('column' => 'aco_id', 'unique' => 0)
-		)
+		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'ARO_ACO_KEY' => array('column' => array('aro_id', 'aco_id'), 'unique' => 1))
 	);
 
 }

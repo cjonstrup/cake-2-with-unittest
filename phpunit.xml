@@ -2,7 +2,7 @@
 <phpunit
         colors="true"
         stopOnFailure="false"
-        bootstrap="app/phpunit-bootstrap.php"
+        bootstrap="app/webroot/phpunit-bootstrap.php"
 >
     <php>
         <env name="TEST" value="SUITE"/>

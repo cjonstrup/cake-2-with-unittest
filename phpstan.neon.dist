@@ -1,7 +1,0 @@
-parameters:
-    level: max
-    paths:
-        - app
-    reportUnmatchedIgnoredErrors: false
-    checkGenericClassInNonGenericObjectType: false
-    checkMissingIterableValueType: false

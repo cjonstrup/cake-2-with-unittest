@@ -12,7 +12,6 @@
 :: @link          https://cakephp.org CakePHP(tm) Project
 :: @package       app.Console
 :: @since         CakePHP(tm) v 2.0
-:: @license       https://opensource.org/licenses/mit-license.php MIT License
 ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
