@@ -26,7 +26,8 @@
 	},
 	"require-dev": {
 		"phpunit/phpunit": "^8.5",
-		"cakephp/cakephp-codesniffer": "^1.0.0"
+		"cakephp/cakephp-codesniffer": "^1.0.0",
+		"phpstan/phpstan": "^0.12.45"
 	},
 	"config": {
 		"vendor-dir": "vendors/",
@@ -41,6 +42,9 @@
 			"@test"
 		],
 		"cs-check": "./vendors/bin/phpcs -p --extensions=php --standard=CakePHP ./lib/Cake",
-		"test": "vendors/bin/phpunit --configuration phpunit.xml --testsuite unittest --stderr --verbose"
+		"test": "vendors/bin/phpunit --configuration phpunit.xml --testsuite unittest --stderr --verbose",
+		"stan": [
+            "vendors/bin/phpstan analyse"
+        ]
 	}
 }
