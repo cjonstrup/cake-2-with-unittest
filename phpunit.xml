@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        colors="true"
+        stopOnFailure="false"
+        bootstrap="app/phpunit-bootstrap.php"
+>
+    <php>
+        <env name="TEST" value="SUITE"/>
+    </php>
+    <testsuites>
+        <testsuite name="unittest">
+            <file>app/Test/Case/Model/UserTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>
