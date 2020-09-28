@@ -95,4 +95,4 @@ CakeLog::config('error', array(
 ));
 
 // Load Composer autoload.
-require_once APP . 'Vendor/autoload.php';
+require APP . 'Vendor/autoload.php';
