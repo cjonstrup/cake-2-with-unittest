@@ -5,11 +5,11 @@
     "require": {
         "php": "^7.3",
 		"ext-mcrypt": "*",
-        "cakephp/cakephp": "2.10.22"
+        "cakephp/cakephp": "2.10.24"
     },
     "require-dev": {
 		"phpunit/phpunit": "^9.3",
-        "fzaninotto/faker": "^1.9.1"
+        "fzaninotto/faker": "^1.9"
     },
     "config": {
         "vendor-dir": "app/Vendor/"
